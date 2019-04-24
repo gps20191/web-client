@@ -9,7 +9,7 @@ namespace LookAtMe.Web.API.Data.Configurations
         public void Configure(EntityTypeBuilder<Alerta> builder)
         {
             builder.ToTable(nameof(Alerta));
-
+            builder.HasKey(a => a.Id);
             builder.HasOne(a => a.Suspeito).WithMany().HasForeignKey(a => a.SuspeitoId);
 
             builder.Property(a => a.Estado).HasMaxLength(40);
