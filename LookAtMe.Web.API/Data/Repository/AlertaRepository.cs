@@ -6,29 +6,29 @@ using System.Threading.Tasks;
 
 namespace LookAtMe.Web.API.Domain.Repository
 {
-    public class AlertaRepository : BaseRepository<AlertaViewModel>, IAlertaRepository
+    public class AlertaRepository : BaseRepository<Alerta>, IAlertaRepository
     {
-        public override Task<AlertaViewModel> AddAsync(AlertaViewModel obj)
+        public override Task<Alerta> AddAsync(Alerta obj)
         {
             throw new NotImplementedException();
         }
 
-        public override Task<AlertaViewModel> EditAsync(AlertaViewModel obj)
+        public override Task<Alerta> EditAsync(Alerta obj)
         {
             throw new NotImplementedException();
         }
 
-        public override Task<AlertaViewModel> GetAllAsync()
+        public override Task<Alerta> GetAllAsync()
         {
             throw new NotImplementedException();
         }
 
-        public override Task<AlertaViewModel> GetByIdAsync(int id)
+        public override Task<Alerta> GetByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<AlertaViewModel> GetResolvidosAsync()
+        public Task<Alerta> GetResolvidosAsync()
         {
             throw new NotImplementedException();
         }

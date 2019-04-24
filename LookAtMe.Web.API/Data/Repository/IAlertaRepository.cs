@@ -8,6 +8,6 @@ namespace LookAtMe.Web.API.Domain.Repository
 {
     interface IAlertaRepository
     {
-        Task<AlertaViewModel> GetResolvidosAsync();
+        Task<Alerta> GetResolvidosAsync();
     }
 }
