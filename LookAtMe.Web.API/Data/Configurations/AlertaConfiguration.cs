@@ -11,8 +11,10 @@ namespace LookAtMe.Web.API.Data.Configurations
             builder.ToTable(nameof(Alerta));
             builder.HasKey(a => a.Id);
             builder.HasOne(a => a.Suspeito).WithMany().HasForeignKey(a => a.SuspeitoId);
-
-            builder.Property(a => a.Estado).HasMaxLength(40);
+            builder.Property(a => a.Localizacao).HasMaxLength(100).IsRequired();
+            builder.Property(a => a.Estado).HasMaxLength(15).IsRequired();
+            builder.Property(a => a.LinhaTranscol).IsRequired();
+            builder.Property(a => a.Capturado).IsRequired();
         }
     }
 }
