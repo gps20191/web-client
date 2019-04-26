@@ -8,11 +8,17 @@ namespace LookAtMe.Web.API.Domain.Repository
 {
     public abstract class BaseRepository<T> : IBaseRepository<T>
     {
-        public readonly AppDbContext context;
+        protected readonly AppDbContext _context;
 
-        public abstract Task<T> AddAsync(T obj);
-        public abstract Task<T> EditAsync(T obj);
-        public abstract Task<T> GetAllAsync();
-        public abstract Task<T> GetByIdAsync(int id);      
+        public BaseRepository(AppDbContext context)
+        {
+            _context = context;
+        }
+
+        public abstract Task<int> AddAsync(T obj);
+        public abstract Task<int> DeleteAsync(int id);
+        public abstract Task<int> EditAsync(T obj);        
+        public abstract Task<T> GetByIdAsync(int id);
+        public abstract Task<ICollection<T>> ListAsync();        
     }
 }

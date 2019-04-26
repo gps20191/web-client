@@ -6,8 +6,12 @@ using LookAtMe.Web.API.Domain.Model;
 
 namespace LookAtMe.Web.API.Domain.Repository
 {
-    interface IAlertaRepository
+    public interface IAlertaRepository : IBaseRepository<Alerta>
     {
-        Task<Alerta> GetResolvidosAsync();
+        Task<Alerta> GetAlertaBySuspeitoAsync(Suspeito s);
+        Task<ICollection<Alerta>> GetAlertasFechadoAsync();
+        Task<ICollection<Alerta>> GetAlertasEmAndamentoAsync();
+        Task<ICollection<Alerta>> GetAlertasAbertoAsync();
+        Task<ICollection<Alerta>> GetAlertasSuspeitoCapturadoAsync();
     }
 }

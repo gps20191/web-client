@@ -10,5 +10,10 @@ namespace LookAtMe.Web.API.Domain.Model
         public int Idade { get; set; }
 
         public ICollection<Ocorrencia> Ocorrencias { get; set; }
+
+        public Suspeito()
+        {
+            Ocorrencias = new List<Ocorrencia>();
+        }
     }
 }

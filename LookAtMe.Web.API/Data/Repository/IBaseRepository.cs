@@ -7,9 +7,10 @@ namespace LookAtMe.Web.API.Domain.Repository
 {
     public interface IBaseRepository<T>
     {
-        Task<T> AddAsync(T obj);
-        Task<T> EditAsync(T obj);
+        Task<int> AddAsync(T obj);
+        Task<int> EditAsync(T obj);
+        Task<int> DeleteAsync(int id);
+        Task<ICollection<T>> ListAsync();
         Task<T> GetByIdAsync(int id);
-        Task<T> GetAllAsync();
     }
 }

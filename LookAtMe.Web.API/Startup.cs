@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using LookAtMe.Web.API.Data.Context;
+using LookAtMe.Web.API.Domain.Repository;
+using LookAtMe.Web.API.Domain.Services;
+using LookAtMe.Web.API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,6 +33,11 @@ namespace LookAtMe.Web.API
             services.AddDbContext<AppDbContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
             );
+
+            services.AddScoped<IAlertaService, AlertaService>();            
+            services.AddScoped<IAlertaRepository, AlertaRepository>();
+            //services.AddScoped<IBaseRepository, BaseRepository>();
+            
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
