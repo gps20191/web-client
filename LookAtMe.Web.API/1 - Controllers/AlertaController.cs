@@ -12,18 +12,18 @@ namespace LookAtMe.Web.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AlertasController : ControllerBase
+    public class AlertaController : ControllerBase
     {
         public readonly IAlertaService alertaService;
 
-        public AlertasController(IAlertaService alertaService)
+        public AlertaController(IAlertaService alertaService)
         {
             this.alertaService = alertaService;
         }
 
         // GET api/values
         [HttpGet]
-        public async Task<IEnumerable<Alerta>> Get()
+        public async Task<IEnumerable<Alerta>> GetAsync()
         {           
             return await alertaService.GetAlertas();
         }
@@ -50,7 +50,7 @@ namespace LookAtMe.Web.API.Controllers
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public async Task<int> Delete(int id)
+        public async Task<int> DeleteAsync(int id)
         {
             return await alertaService.DeletarAlertaAsync(id);
         }
