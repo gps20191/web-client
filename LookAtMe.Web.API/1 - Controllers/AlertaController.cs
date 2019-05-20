@@ -28,31 +28,31 @@ namespace LookAtMe.Web.API.Controllers
             return await alertaService.GetAlertas();
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            return "value";
-        }
+        //// GET api/values/5
+        //[HttpGet("{id}")]
+        //public ActionResult<string> Get(int id)
+        //{
+        //    return "value";
+        //}
 
-        // POST api/values
-        [HttpPost]
-        public async Task<int> PostAsync([FromBody] Alerta value)
-        {
-            return await alertaService.CriarAlertaAsync(value);
-        }
+        //// POST api/values
+        //[HttpPost]
+        //public async Task<int> PostAsync([FromBody] Alerta value)
+        //{
+        //    return await alertaService.CriarAlertaAsync(value);
+        //}
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Alerta value)
-        {
-        }
+        //// PUT api/values/5
+        //[HttpPut("{id}")]
+        //public void Put(int id, [FromBody] Alerta value)
+        //{
+        //}
 
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public async Task<int> DeleteAsync(int id)
-        {
-            return await alertaService.DeletarAlertaAsync(id);
-        }
+        //// DELETE api/values/5
+        //[HttpDelete("{id}")]
+        //public async Task<int> DeleteAsync(int id)
+        //{
+        //    return await alertaService.DeletarAlertaAsync(id);
+        //}
     }
 }

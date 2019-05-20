@@ -17,33 +17,43 @@ namespace LookAtMe.Web.API.Services
             this.AlertRepository = alertRepository;
         }
 
-        public async Task<int> CriarAlertaAsync(Alerta alerta)
+        public Task<int> CriarAlertaAsync(Alerta alerta)
         {
-            //Verificar se o alerta pro suspeito já existe, caso exista, então deve alterar apenas a localização e a linha do ônibus
-            Alerta obj = await AlertRepository.GetAlertaBySuspeitoAsync(alerta.Suspeito);
-
-            int id = 0;
-
-            if (obj != null && !string.Equals(obj.Estado,"Fechado")) id = await AlertRepository.EditAsync(alerta);
-            else
-            {
-                id = await AlertRepository.AddAsync(alerta);                
-            }
-
-            return id;
+            throw new NotImplementedException();
         }
+
+        public Task<int> DeletarAlertaAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        //public async Task<int> CriarAlertaAsync(Alerta alerta)
+        //{
+        //    //Verificar se o alerta pro suspeito já existe, caso exista, então deve alterar apenas a localização e a linha do ônibus
+        //    Alerta obj = await AlertRepository.GetAlertaBySuspeitoAsync(alerta.Suspeito);
+
+        //    int id = 0;
+
+        //    if (obj != null && !string.Equals(obj.Estado,"Fechado")) id = await AlertRepository.EditAsync(alerta);
+        //    else
+        //    {
+        //        id = await AlertRepository.AddAsync(alerta);                
+        //    }
+
+        //    return id;
+        //}
 
         public async Task<ICollection<Alerta>> GetAlertas()
         {
-            var x = await AlertRepository.ListAsync();
+            var x = await AlertRepository.GetAllAsync();
             return x;
         }
 
-        public async Task<int> DeletarAlertaAsync(int id)
-        {
-            var x = await AlertRepository.DeleteAsync(id);
-            return x;
-        }
+        //public async Task<int> DeletarAlertaAsync(int id)
+        //{
+        //    var x = await AlertRepository.DeleteAsync(id);
+        //    return x;
+        //}
 
         //public async Task<Alerta> ConcluirAlertaAsync(int id)
         //{
