@@ -8,10 +8,14 @@ namespace LookAtMe.Web.API.Domain.Services
 {
     public interface IAlertaService
     {
-        Task<int> CriarAlertaAsync(Alerta alerta);
+        void CriarAlerta(Alerta alerta);
+
+        void CancelarAlerta(Alerta alerta);
+
+        void MudarEstado(Alerta novoAlerta);
+
+        void DeletarAlerta(Alerta alerta);
 
         Task<ICollection<Alerta>> GetAlertas();
-
-        Task<int> DeletarAlertaAsync(int id);
     }
 }

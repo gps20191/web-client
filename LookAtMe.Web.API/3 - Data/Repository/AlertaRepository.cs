@@ -1,4 +1,5 @@
 ﻿using LookAtMe.Web.API.Data.Context;
+using LookAtMe.Web.API.Data.Interfaces;
 using LookAtMe.Web.API.Domain.Model;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -6,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LookAtMe.Web.API.Domain.Repository
+namespace LookAtMe.Web.API.Data.Repository
 {
     public class AlertaRepository : BaseRepository<Alerta>, IAlertaRepository
     {
@@ -15,24 +16,28 @@ namespace LookAtMe.Web.API.Domain.Repository
 
         }              
 
-        public Task<ICollection<Alerta>> GetAlertasAbertoAsync()
+        public Task<List<Alerta>> GetAlertasAbertoAsync()
         {
-            throw new NotImplementedException();
+            var alertas = _context.Alertas.AsQueryable().Where(a => a.Estado == "Aberto").ToListAsync();
+            return alertas;
         }
 
-        public Task<ICollection<Alerta>> GetAlertasEmAndamentoAsync()
+        public Task<List<Alerta>> GetAlertasEmAndamentoAsync()
         {
-            throw new NotImplementedException();
+            var alertas = _context.Alertas.AsQueryable().Where(a => a.Estado == "Em Andamento").ToListAsync();
+            return alertas;
         }
 
-        public Task<ICollection<Alerta>> GetAlertasFechadoAsync()
+        public Task<List<Alerta>> GetAlertasFechadoAsync()
         {
-            throw new NotImplementedException();
+            var alertas = _context.Alertas.AsQueryable().Where(a => a.Estado == "Fechado").ToListAsync();
+            return alertas;
         }
 
-        public Task<ICollection<Alerta>> GetAlertasSuspeitoCapturadoAsync()
+        public Task<List<Alerta>> GetAlertasSuspeitoCapturadoAsync()
         {
-            throw new NotImplementedException();
+            var alertas = _context.Alertas.AsQueryable().Where(a => a.Capturado == true).ToListAsync();
+            return alertas;
         }
     }
 }

@@ -4,9 +4,10 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using LookAtMe.Web.API.Data.Context;
+using LookAtMe.Web.API.Data.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace LookAtMe.Web.API.Domain.Repository
+namespace LookAtMe.Web.API.Data.Repository
 {
     public abstract class BaseRepository<T> : IBaseRepository<T> where T : class
     {

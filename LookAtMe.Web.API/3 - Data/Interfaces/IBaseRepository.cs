@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LookAtMe.Web.API.Domain.Repository
+namespace LookAtMe.Web.API.Data.Interfaces
 {
     public interface IBaseRepository<T>
     {
