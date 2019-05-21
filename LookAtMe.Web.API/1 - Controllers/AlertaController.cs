@@ -25,34 +25,35 @@ namespace LookAtMe.Web.API.Controllers
         [HttpGet]
         public async Task<IEnumerable<Alerta>> GetAsync()
         {           
-            return await alertaService.GetAlertas();
+            return await alertaService.GetAlertasAsync();
         }
 
-        //// GET api/values/5
-        //[HttpGet("{id}")]
-        //public ActionResult<string> Get(int id)
-        //{
-        //    return "value";
-        //}
+        // GET api/values/5
+        [HttpGet("{id}")]
+        public ActionResult<Alerta> Get(int id)
+        {
+            return alertaService.GetAlertaById(id);
+        }
 
-        //// POST api/values
-        //[HttpPost]
-        //public async Task<int> PostAsync([FromBody] Alerta value)
-        //{
-        //    return await alertaService.CriarAlertaAsync(value);
-        //}
+        // POST api/values
+        [HttpPost]
+        public void Post([FromBody] Alerta value)
+        {
+            alertaService.CriarAlerta(value);
+        }
 
-        //// PUT api/values/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] Alerta value)
-        //{
-        //}
+        // PUT api/values/5
+        [HttpPut]
+        public void Put([FromBody] Alerta value)
+        {
+            alertaService.AtualizarAlerta(value);
+        }
 
-        //// DELETE api/values/5
-        //[HttpDelete("{id}")]
-        //public async Task<int> DeleteAsync(int id)
-        //{
-        //    return await alertaService.DeletarAlertaAsync(id);
-        //}
+        // DELETE api/values/5
+        [HttpDelete]
+        public void Delete([FromBody] Alerta value)
+        {
+            alertaService.DeletarAlerta(value);
+        }
     }
 }

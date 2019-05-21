@@ -17,51 +17,85 @@ namespace LookAtMe.Web.API.Services
             this.AlertRepository = alertRepository;
         }
 
-        public Task<int> CriarAlertaAsync(Alerta alerta)
+        public void AtualizarAlerta(Alerta novoAlerta)
         {
-            throw new NotImplementedException();
+            AlertRepository.Edit(novoAlerta);
+            AlertRepository.Save();
         }
 
-        public Task<int> DeletarAlertaAsync(int id)
+        public void CancelarAlerta(Alerta alerta)
         {
-            throw new NotImplementedException();
+            alerta.Estado = "Fechado";
+            AlertRepository.Edit(alerta);
+            AlertRepository.Save();
         }
 
-        //public async Task<int> CriarAlertaAsync(Alerta alerta)
-        //{
-        //    //Verificar se o alerta pro suspeito já existe, caso exista, então deve alterar apenas a localização e a linha do ônibus
-        //    Alerta obj = await AlertRepository.GetAlertaBySuspeitoAsync(alerta.Suspeito);
-
-        //    int id = 0;
-
-        //    if (obj != null && !string.Equals(obj.Estado,"Fechado")) id = await AlertRepository.EditAsync(alerta);
-        //    else
-        //    {
-        //        id = await AlertRepository.AddAsync(alerta);                
-        //    }
-
-        //    return id;
-        //}
-
-        public async Task<ICollection<Alerta>> GetAlertas()
+        public void CriarAlerta(Alerta alerta)
         {
-            var x = await AlertRepository.GetAllAsync();
-            return x;
+            Suspeito s = alerta.Suspeito;
+
+            var ultimoAlerta = AlertRepository.GetBy(a => a.Suspeito == s && a.Estado != "Fechado").FirstOrDefault();
+
+            if(ultimoAlerta == null)
+            {
+                AlertRepository.Add(alerta);
+            }
+            else
+            {
+                ultimoAlerta.Estado = "Fechado";
+                AlertRepository.Edit(ultimoAlerta);
+            }
+
+            AlertRepository.Save();            
         }
 
-        //public async Task<int> DeletarAlertaAsync(int id)
-        //{
-        //    var x = await AlertRepository.DeleteAsync(id);
-        //    return x;
-        //}
+        public void DeletarAlerta(Alerta alerta)
+        {
+            AlertRepository.Delete(alerta);
+            AlertRepository.Save();
+        }
 
-        //public async Task<Alerta> ConcluirAlertaAsync(int id)
-        //{
-        //    Alerta obj = await AlertRepository.GetByIdAsync(id);
+        public Alerta GetAlertaById(int id)
+        {
+            var alerta = AlertRepository.GetBy(a => a.Id == id).FirstOrDefault();
+            return alerta;
+        }
 
-        //    obj.
+        public List<Alerta> GetAlertas()
+        {
+            return AlertRepository.GetAll().ToList();
+        }
 
-        //    return null;
-        //}
+        public async Task<ICollection<Alerta>> GetAlertasAsync()
+        {
+            var alertas = await AlertRepository.GetAllAsync();
+            return alertas;
+        }
+
+        public Task<List<Alerta>> GetAlertasByEstadoAsync(string estado)
+        {
+            if(estado == "Aberto")
+            {
+                return AlertRepository.GetAlertasAbertoAsync();
+            }
+            else if(estado == "Em Andamento")
+            {
+                return AlertRepository.GetAlertasEmAndamentoAsync();
+            }
+            else if(estado == "Fechado")
+            {
+                return AlertRepository.GetAlertasFechadoAsync();
+            }
+            else
+            {
+                throw new ArgumentException("Argumento Inválido");
+            }
+        }
+
+        public List<Alerta> GetAlertasBySuspeito(Suspeito suspeito)
+        {
+            var alerta = AlertRepository.GetBy(a => a.Suspeito == suspeito).ToList();
+            return alerta;
+        }        
     }
 }

@@ -12,10 +12,18 @@ namespace LookAtMe.Web.API.Domain.Interfaces
 
         void CancelarAlerta(Alerta alerta);
 
-        void MudarEstado(Alerta novoAlerta);
+        void AtualizarAlerta(Alerta novoAlerta);
 
         void DeletarAlerta(Alerta alerta);
 
-        Task<ICollection<Alerta>> GetAlertas();
+        Alerta GetAlertaById(int id);
+
+        List<Alerta> GetAlertas();
+
+        List<Alerta> GetAlertasBySuspeito(Suspeito suspeito);
+
+        Task<List<Alerta>> GetAlertasByEstadoAsync(string estado);
+
+        Task<ICollection<Alerta>> GetAlertasAsync();
     }
 }

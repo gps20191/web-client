@@ -45,12 +45,6 @@ namespace LookAtMe.Web.API.Data.Repository
             return x;
         }
 
-        public virtual T GetBy(System.Linq.Expressions.Expression<Func<T, bool>> predicate)
-        {
-            IQueryable<T> query = _context.Set<T>().Where(predicate);
-            return query.First();
-        }
-
         public virtual void Save()
         {
             _context.SaveChanges();
@@ -58,7 +52,8 @@ namespace LookAtMe.Web.API.Data.Repository
 
         IQueryable<T> IBaseRepository<T>.GetBy(Expression<Func<T, bool>> predicate)
         {
-            throw new NotImplementedException();
+            IQueryable<T> query = _context.Set<T>().Where(predicate);
+            return query;
         }
     }
 }
