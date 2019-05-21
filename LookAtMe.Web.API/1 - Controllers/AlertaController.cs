@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using LookAtMe.Web.API.Data.Context;
 using LookAtMe.Web.API.Domain.Model;
-using LookAtMe.Web.API.Domain.Services;
+using LookAtMe.Web.API.Domain.Interfaces;
 using LookAtMe.Web.API.Services;
 using Microsoft.AspNetCore.Mvc;
 

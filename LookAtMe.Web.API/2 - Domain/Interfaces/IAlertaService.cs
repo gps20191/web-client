@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LookAtMe.Web.API.Domain.Services
+namespace LookAtMe.Web.API.Domain.Interfaces
 {
     public interface IAlertaService
     {

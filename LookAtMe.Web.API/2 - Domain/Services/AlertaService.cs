@@ -1,10 +1,10 @@
 ﻿using LookAtMe.Web.API.Domain.Model;
-using LookAtMe.Web.API.Domain.Repository;
-using LookAtMe.Web.API.Domain.Services;
+using LookAtMe.Web.API.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LookAtMe.Web.API.Data.Interfaces;
 
 namespace LookAtMe.Web.API.Services
 {
