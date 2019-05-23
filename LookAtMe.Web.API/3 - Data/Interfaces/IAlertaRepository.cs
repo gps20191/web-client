@@ -12,5 +12,6 @@ namespace LookAtMe.Web.API.Data.Interfaces
         Task<List<Alerta>> GetAlertasEmAndamentoAsync();
         Task<List<Alerta>> GetAlertasAbertoAsync();
         Task<List<Alerta>> GetAlertasSuspeitoCapturadoAsync();
+        Task<List<Alerta>> GetAlertasCanceladosAsync();
     }
 }

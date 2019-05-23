@@ -14,11 +14,23 @@ namespace LookAtMe.Web.API.Data.Repository
         public AlertaRepository(AppDbContext context) : base(context)
         {
 
-        }              
+        }
+
+        public override void Delete(int id)
+        {
+            var obj = _context.Alertas.Where(a => a.Id == id).FirstOrDefault();
+            _context.Alertas.Remove(obj);
+        }
 
         public Task<List<Alerta>> GetAlertasAbertoAsync()
         {
             var alertas = _context.Alertas.AsQueryable().Where(a => a.Estado == "Aberto").ToListAsync();
+            return alertas;
+        }
+
+        public Task<List<Alerta>> GetAlertasCanceladosAsync()
+        {
+            var alertas = _context.Alertas.AsQueryable().Where(a => a.Estado == "Cancelado").ToListAsync();
             return alertas;
         }
 

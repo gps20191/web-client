@@ -8,8 +8,6 @@ namespace LookAtMe.Web.API.Data.Context
     {
 
         public DbSet<Alerta> Alertas { get; set; }
-        public DbSet<Ocorrencia> Ocorrencias { get; set; }
-        public DbSet<Suspeito> Suspeitos { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -24,8 +22,6 @@ namespace LookAtMe.Web.API.Data.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new AlertaConfiguration());
-            modelBuilder.ApplyConfiguration(new SuspeitoConfiguration());
-            modelBuilder.ApplyConfiguration(new OcorrenciaConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

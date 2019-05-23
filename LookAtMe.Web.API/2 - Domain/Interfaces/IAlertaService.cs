@@ -14,13 +14,13 @@ namespace LookAtMe.Web.API.Domain.Interfaces
 
         void AtualizarAlerta(Alerta novoAlerta);
 
-        void DeletarAlerta(Alerta alerta);
+        void DeletarAlerta(int alerta);
 
         Alerta GetAlertaById(int id);
 
         List<Alerta> GetAlertas();
 
-        List<Alerta> GetAlertasBySuspeito(Suspeito suspeito);
+        List<Alerta> GetAlertasByIdSuspeito(int idSuspeito);
 
         Task<List<Alerta>> GetAlertasByEstadoAsync(string estado);
 

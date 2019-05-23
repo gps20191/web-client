@@ -25,16 +25,16 @@ namespace LookAtMe.Web.API.Services
 
         public void CancelarAlerta(Alerta alerta)
         {
-            alerta.Estado = "Fechado";
+            alerta.Estado = "Cancelado";
             AlertRepository.Edit(alerta);
             AlertRepository.Save();
         }
 
         public void CriarAlerta(Alerta alerta)
         {
-            Suspeito s = alerta.Suspeito;
+            int s = alerta.SuspeitoId;
 
-            var ultimoAlerta = AlertRepository.GetBy(a => a.Suspeito == s && a.Estado != "Fechado").FirstOrDefault();
+            var ultimoAlerta = AlertRepository.GetBy(a => a.SuspeitoId == s && a.Estado != "Fechado").FirstOrDefault();
 
             if(ultimoAlerta == null)
             {
@@ -42,16 +42,17 @@ namespace LookAtMe.Web.API.Services
             }
             else
             {
-                ultimoAlerta.Estado = "Fechado";
+                ultimoAlerta.Estado = "Cancelado";                
                 AlertRepository.Edit(ultimoAlerta);
+                AlertRepository.Add(alerta);
             }
 
-            AlertRepository.Save();            
+            AlertRepository.Save();
         }
 
-        public void DeletarAlerta(Alerta alerta)
+        public void DeletarAlerta(int id)
         {
-            AlertRepository.Delete(alerta);
+            AlertRepository.Delete(id);
             AlertRepository.Save();
         }
 
@@ -86,15 +87,19 @@ namespace LookAtMe.Web.API.Services
             {
                 return AlertRepository.GetAlertasFechadoAsync();
             }
+            else if(estado == "Cancelado")
+            {
+                return AlertRepository.GetAlertasCanceladosAsync();
+            }
             else
             {
                 throw new ArgumentException("Argumento Inválido");
             }
         }
 
-        public List<Alerta> GetAlertasBySuspeito(Suspeito suspeito)
+        public List<Alerta> GetAlertasByIdSuspeito(int idSuspeito)
         {
-            var alerta = AlertRepository.GetBy(a => a.Suspeito == suspeito).ToList();
+            var alerta = AlertRepository.GetBy(a => a.SuspeitoId == idSuspeito).ToList();
             return alerta;
         }        
     }

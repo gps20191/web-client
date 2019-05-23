@@ -23,11 +23,7 @@ namespace LookAtMe.Web.API.Data.Repository
             _context.Set<T>().Add(obj);
         }
 
-        public virtual void Delete(T obj)
-        {
-
-            _context.Set<T>().Remove(obj);
-        }
+        public abstract void Delete(int id);
 
         public virtual void Edit(T obj)
         {

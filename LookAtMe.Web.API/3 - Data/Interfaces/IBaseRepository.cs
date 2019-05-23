@@ -12,7 +12,7 @@ namespace LookAtMe.Web.API.Data.Interfaces
         IQueryable<T> GetAll();
         Task<List<T>> GetAllAsync();
         void Edit(T obj);
-        void Delete(T obj);
+        void Delete(int id);
         void Save();
     }
 }

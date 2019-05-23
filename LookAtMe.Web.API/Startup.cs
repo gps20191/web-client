@@ -32,7 +32,8 @@ namespace LookAtMe.Web.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>(
-                options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+                //options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+                options => options.UseSqlServer(Configuration.GetConnectionString("LocalConnection"))
             );
 
             services.AddScoped<IAlertaService, AlertaService>();            
