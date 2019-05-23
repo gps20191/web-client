@@ -51,31 +51,35 @@
             <h4 id="numberAlert">Alert #037</h4>
           </div>
           <div class="card-body">
-            <h4>An outlaw has been indentified!</h4>
+              <h4>An outlaw has been indentified!</h4>
             <div class="row alert-information">
               <!--Image URL from intel must be here-->
-              <div id="imgSuspect" class="col-md-3">
+              
+              <div id="imgSuspect" class="col-md-6">
                 <!--Definir tamanho...-->
-                <img class="img-thumbnail" src="http://photos.costume-works.com/full/thug_dog.jpg" >
+                <img class="rounded float-left" src="http://photos.costume-works.com/full/thug_dog.jpg" style="max-height: 200px; max-width:150px;">
               </div>
-              <div id="busLine" class="col-md-3">
-                <i class="fa fa-bus"></i> Bus Line</div>
-              <div id="timePicTaken" class="col-md-3">
-                <i class="fa fa-clock-o"></i> Time</div>
-              <div id="coordinates" class="col-md-3">
-                <i class="fa fa-map-marker"></i> Location</div>
-             
+              <div id="infoIdentif" class="col-md-6">
+                <div id="busLine" style="margin: 10% 0">
+                  <i class="fa fa-bus"></i> Bus Line</div>
+                <div id="timePicTaken" style="margin: 10% 0">
+                  <i class="fa fa-clock-o"></i> Time</div>
+                <div id="coordinates" style="margin: 10% 0">
+                  <i class="fa fa-map-marker"></i> Location</div>
+                <div class="form-group" style="margin: 10% 0">
+                      <select>
+                        <option selected disabled>Register Action</option> 
+                        <option>Unidade encaminhada</option>
+                        <option>Cancelado</option>
+                        <option>Action 3</option>
+                        <option>Action 4</option>
+                      </select>
+                </div>
+              </div>
             </div>
             <!--Security Entity actions-->
-            <div class="row">
-                <div class="col-md-3 form-group">
-                  <select>Register Action
-                    <option>Unidade encaminhada</option>
-                    <option>Cancelado</option>
-                    <option>Action 3</option>
-                    <option>Action 4</option>
-                  </select>
-                </div>
+            <div id="saveAction" class="row">
+                <a class="btn btn-primary pull-right">Save</a>
             </div>
 
           </div>
@@ -99,7 +103,7 @@
 
       $.ajax({
         //url:something
-        ,data 
+        //,data 
       });
     });
   </script>
