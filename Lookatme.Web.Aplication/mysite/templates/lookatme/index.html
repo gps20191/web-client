@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alertas</title>
+</head>
+<body>
+
+{% block content %}
+    <h2>Alertas em aberto</h2>
+
+    {% if alertas %}
+        <table class="table table-striped" id="table-alerts">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">id Alerta</th>
+                    <th scope="col">Linha</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Foto</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for alerta  in alertas%}
+                <tr>
+                    <td>{{ alerta.id }}</td>
+                    <td>{{ alerta.numeroOnibus }}</td>
+                    <td>{{ alerta.time}}</td>
+                    <td>{{ alerta.urlFoto }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <div>
+            <h4>Nada encontrado</h4>
+        </div>
+    {% endif %}
+{% endblock %}
+
+</body>
+</html>
