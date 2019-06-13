@@ -1,0 +1,17 @@
+C:\Users\laly_\Source\Repos\web-client\LookAtMeTest\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\laly_\Source\Repos\web-client\LookAtMeTest\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\laly_\Source\Repos\web-client\LookAtMeTest\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\laly_\Source\Repos\web-client\LookAtMeTest\bin\Debug\netcoreapp2.2\LookAtMeTest.deps.json
+C:\Users\laly_\Source\Repos\web-client\LookAtMeTest\bin\Debug\netcoreapp2.2\LookAtMeTest.runtimeconfig.json
+C:\Users\laly_\Source\Repos\web-client\LookAtMeTest\bin\Debug\netcoreapp2.2\LookAtMeTest.runtimeconfig.dev.json
+C:\Users\laly_\Source\Repos\web-client\LookAtMeTest\bin\Debug\netcoreapp2.2\LookAtMeTest.dll
+C:\Users\laly_\Source\Repos\web-client\LookAtMeTest\bin\Debug\netcoreapp2.2\LookAtMeTest.pdb
+C:\Users\laly_\Source\Repos\web-client\LookAtMeTest\bin\Debug\netcoreapp2.2\LookAtMe.Web.API.dll
+C:\Users\laly_\Source\Repos\web-client\LookAtMeTest\bin\Debug\netcoreapp2.2\LookAtMe.Web.API.pdb
+C:\Users\laly_\Source\Repos\web-client\LookAtMeTest\obj\Debug\netcoreapp2.2\LookAtMeTest.csprojAssemblyReference.cache
+C:\Users\laly_\Source\Repos\web-client\LookAtMeTest\obj\Debug\netcoreapp2.2\LookAtMeTest.csproj.CoreCompileInputs.cache
+C:\Users\laly_\Source\Repos\web-client\LookAtMeTest\obj\Debug\netcoreapp2.2\LookAtMeTest.AssemblyInfoInputs.cache
+C:\Users\laly_\Source\Repos\web-client\LookAtMeTest\obj\Debug\netcoreapp2.2\LookAtMeTest.AssemblyInfo.cs
+C:\Users\laly_\Source\Repos\web-client\LookAtMeTest\obj\Debug\netcoreapp2.2\LookAtMeTest.csproj.CopyComplete
+C:\Users\laly_\Source\Repos\web-client\LookAtMeTest\obj\Debug\netcoreapp2.2\LookAtMeTest.dll
+C:\Users\laly_\Source\Repos\web-client\LookAtMeTest\obj\Debug\netcoreapp2.2\LookAtMeTest.pdb
