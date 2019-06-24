@@ -15,3 +15,20 @@ C:\Users\laly_\Source\Repos\web-client\LookAtMeTest\obj\Debug\netcoreapp2.2\Look
 C:\Users\laly_\Source\Repos\web-client\LookAtMeTest\obj\Debug\netcoreapp2.2\LookAtMeTest.csproj.CopyComplete
 C:\Users\laly_\Source\Repos\web-client\LookAtMeTest\obj\Debug\netcoreapp2.2\LookAtMeTest.dll
 C:\Users\laly_\Source\Repos\web-client\LookAtMeTest\obj\Debug\netcoreapp2.2\LookAtMeTest.pdb
+D:\GPS teste\web-client\LookAtMeTest\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\GPS teste\web-client\LookAtMeTest\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\GPS teste\web-client\LookAtMeTest\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\GPS teste\web-client\LookAtMeTest\bin\Debug\netcoreapp2.2\LookAtMeTest.deps.json
+D:\GPS teste\web-client\LookAtMeTest\bin\Debug\netcoreapp2.2\LookAtMeTest.runtimeconfig.json
+D:\GPS teste\web-client\LookAtMeTest\bin\Debug\netcoreapp2.2\LookAtMeTest.runtimeconfig.dev.json
+D:\GPS teste\web-client\LookAtMeTest\bin\Debug\netcoreapp2.2\LookAtMeTest.dll
+D:\GPS teste\web-client\LookAtMeTest\bin\Debug\netcoreapp2.2\LookAtMeTest.pdb
+D:\GPS teste\web-client\LookAtMeTest\bin\Debug\netcoreapp2.2\LookAtMe.Web.API.dll
+D:\GPS teste\web-client\LookAtMeTest\bin\Debug\netcoreapp2.2\LookAtMe.Web.API.pdb
+D:\GPS teste\web-client\LookAtMeTest\obj\Debug\netcoreapp2.2\LookAtMeTest.csprojAssemblyReference.cache
+D:\GPS teste\web-client\LookAtMeTest\obj\Debug\netcoreapp2.2\LookAtMeTest.csproj.CoreCompileInputs.cache
+D:\GPS teste\web-client\LookAtMeTest\obj\Debug\netcoreapp2.2\LookAtMeTest.AssemblyInfoInputs.cache
+D:\GPS teste\web-client\LookAtMeTest\obj\Debug\netcoreapp2.2\LookAtMeTest.AssemblyInfo.cs
+D:\GPS teste\web-client\LookAtMeTest\obj\Debug\netcoreapp2.2\LookAtMeTest.csproj.CopyComplete
+D:\GPS teste\web-client\LookAtMeTest\obj\Debug\netcoreapp2.2\LookAtMeTest.dll
+D:\GPS teste\web-client\LookAtMeTest\obj\Debug\netcoreapp2.2\LookAtMeTest.pdb
