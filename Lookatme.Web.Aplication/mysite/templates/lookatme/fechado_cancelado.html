@@ -88,21 +88,20 @@
                         <th scope="col">Time</th>
                         <th scope="col">Localização</th>
                         <th scope="col">Status</th>
-                        <th scope="col">Ações</th>
 
 
                     </tr>
                 </thead>
                 <tbody>
                     {% for alerta  in alertas%}
-                        {% if alerta.estado == 'Aberto' or alerta.estado == 'Em Andamento' %}
+                        {% if alerta.estado != 'Aberto' and alerta.estado != 'Em Andamento' %}
                             <tr>
                                 <td>{{ alerta.numeroOnibus }}</td>
                                 <td>{{ alerta.time}}</td>
                                 <td>{{ alerta.localizacao}}</td>
-                                <td class="status">{{ alerta.estado }}  </td>
-                                <td><button type="button" class="btn btn-primary btn-xs">Alterar</button> </td>
+                                <td>{{ alerta.estado }}</td>
                             </tr>
+
                         {% endif %}
                     {% endfor %}
                 </tbody>
@@ -129,29 +128,20 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script>
-
+        var fakedata = [["032", "503", "T. Vila Velha", "Reta da Penha", "20/05/2018 22:20", "Encaminhado"],
+        ["033", "503", "T. Laranjeiras", "T. Vila Velha", "02/09/2008 22:20", "Fechado"]]
         $(document).ready(function () {
-            var allstatus = ['Aberto','Em Andamento', 'Cancelado', 'Fechado'];
-            $("td.status").on("dblclick",function(){
-                conteudoOriginal = $(this).text();
-                var htmlIn = "<select>";
-                for(var i=0; i<allstatus.length; i++){
-                    if(allstatus[i] == conteudoOriginal){
-                      htmlIn = htmlIn + "<option selected>" + allstatus[i] +"</option>";
-                    } else {
-                      htmlIn = htmlIn + "<option>" + allstatus[i] +"</option>";
-                    }
-                }
-                 htmlIn = htmlIn + "</select>";
-                 $(this).html(htmlIn);
-                 $(this).focus();
-
-                 $(this).children().first().on("blur",function () {
-                    novoConteudo = $(this).val();
-                    $(this).parent().text(novoConteudo);
-                  });
-
-             });
+            $('#table-alerts').DataTable({
+                //"ajax": source do json
+                data: alertas,
+                columns: [
+                    { title: "ID Alert" },
+                    { title: "Bus Line" },
+                    { title: "Time" },
+                    { title: "Localização" },
+                    { title: "Status" }
+            ]
+            });
         });
     </script>
 </body>

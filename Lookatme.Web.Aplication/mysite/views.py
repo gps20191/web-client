@@ -35,7 +35,7 @@ def estadoFechado(request):
         hora = dataHora[1]
         r[i]['time'] = data + " " + hora
         r[i]['localizacao'] = str(r[i]['latitude']) + ' , '+ str(r[i]['longitude'])
-    return render(request, 'lookatme/alertpage.html', {'alertas': r})
+    return render(request, 'lookatme/fechado_cancelado.html', {'alertas': r})
 
 def estadoAndamento(request):
     url = "https://alerta-api.azurewebsites.net/api/alertas/andamento"
@@ -57,5 +57,5 @@ def estadoCancelado(request):
         hora = dataHora[1]
         r[i]['time'] = data + " " + hora
         r[i]['localizacao'] = str(r[i]['latitude']) + ' , '+ str(r[i]['longitude'])
-    return render(request, 'lookatme/alertpage.html', {'alertas': r})
+    return render(request, 'lookatme/fechado_cancelado.html', {'alertas': r})
 
