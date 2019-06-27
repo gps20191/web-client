@@ -12,6 +12,31 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="{% static 'lookatme/theme.css' %}">
     </link>
+    <style>
+         ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #333;
+        }
+
+        li {
+          float: left;
+        }
+
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+
+        li a:hover {
+          background-color: #111;
+        }
+    </style>
 </head>
 
 <body>
@@ -46,20 +71,19 @@
 
     {% block content %}
         {% if alertas %}
-         <div class="form-group" align="right">
-              <select>
-                <option selected disabled>Register Action</option>
-                <option>Aberto</option>
-                <option>Cancelado</option>
-                <option>Em Andamento</option>
-                <option>Fechado</option>
-              </select>
+            <div>
+                <ul>
+                      <li><a class="active" href="alertas">Alertas</a></li>
+                      <li><a href="aberto">Abertos</a></li>
+                      <li><a href="fechado">Fechados</a></li>
+                      <li><a href="andamento">Em Andamento</a></li>
+                      <li><a href="cancelado">Cancelados</a></li>
+                </ul>
             </div>
 
             <table class="table table-striped" id="table-alerts">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">id Alerta</th>
                         <th scope="col">Linha</th>
                         <th scope="col">Time</th>
                         <th scope="col">Localização</th>
@@ -73,7 +97,6 @@
                     {% for alerta  in alertas%}
                         {% if alerta.estado != 'Aberto'  %}
                             <tr>
-                                <td>{{ alerta.id }}</td>
                                 <td>{{ alerta.numeroOnibus }}</td>
                                 <td>{{ alerta.time}}</td>
                                 <td>{{ alerta.localizacao}}</td>
@@ -81,7 +104,6 @@
                             </tr>
                         {% else %}
                             <tr>
-                                <td>{{ alerta.id }}</td>
                                 <td>{{ alerta.numeroOnibus }}</td>
                                 <td>{{ alerta.time}}</td>
                                 <td>{{ alerta.localizacao}}</td>
